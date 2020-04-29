@@ -1,0 +1,41 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %} Marti F.R {% endblock %}
+
+{% block styles %}
+{{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'custom.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Lekton&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+{% endblock %}
+
+{% block navbar %}
+    <div class="container">
+		<a href="/"><img src="{{url_for('static', filename='img/cesare-ripa.gif')}}" class="logo" /></a>
+		<div class="nav">
+			<a href="{{ '/' }}">home</a>
+			|
+			<a href="{{ '/about' }}" class="active">about</a>
+			|
+			<a href="{{ '/shop' }}">shop</a>
+			|
+			<a href="{{ '/contact' }}">contact</a>
+		</div>
+	</div>
+{% endblock %}
+
+{% block content %}
+	<div class="container">
+		<img src="{{url_for('static', filename='img/about.jpeg')}}" class="aboutimg"/>
+		<p>My name is Martí and I am a audiovisuals designer and programming enthusiast.</p>
+		<p>As a designer, I identify standardized tools as the focus of a creative crisis. For this reason I consider possible alternatives to the standardized tools, and I propose experimentation with tools as a good way to innovate in the field of art and design. The appropriation and subversion of non-design tools, the creation of new tools that fit the needs of each project and the recovery of more traditional and analog tools, are some of the options that I consider as an alternative to the large packages of computer design tools.
+		</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+	</div>
+    <div class="container">
+		<footer>
+	        <p>© 2020 Copyright | Marti F.R | All Rights Reserved</p>
+	    </footer>
+    </div>
+{% endblock %}

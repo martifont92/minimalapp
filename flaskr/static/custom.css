@@ -1,0 +1,100 @@
+html, body{
+	font-family: 'Lekton', sans-serif;
+	font-size: 15px;
+    color: #000;
+
+    height: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+p{
+    display: block;
+    line-height: 1.5;
+
+}
+
+a{
+	text-decoration: none;
+	color: rgb(0,0,0,0.5);
+}
+
+footer{
+	text-align: center;
+	font-size: 0.8em;
+	color: #808080;
+	margin-top: 1em;
+	padding-top: 0.5em;
+	border-top: 1px solid #D3D3D3;
+
+	height: 40px;
+	width: 100%;
+    position: relative;
+	bottom: 0;
+}
+
+h1{
+	text-align: center;
+}
+
+h1,h2,h3,h4,h5,h6{
+	letter-spacing: 1.5px;
+}
+
+input {
+  width: 180px;
+  height: 25px;
+  font-family: 'Lekton';
+}
+
+ul {
+	display: block;
+}
+
+.active{
+	color: rgb(0,0,0,1);
+}
+
+.nav{
+	text-align: center;
+	font-size: 1em;
+	margin-bottom: 20px;
+}
+
+.nav a{
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.nav a:hover{
+	opacity: 0.5;
+}
+
+.logo{
+	max-width: 180px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.aboutimg{
+	max-width: 190px;
+	display: block;
+	float: left;
+	margin-right: 15px;
+	margin-bottom: 5px;
+}
+
+.button:hover {
+	background-color: white;
+  	color: black;
+  	border: 1px solid #404040;
+}
+
+.center {
+	text-align: center;
+}

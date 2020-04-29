@@ -1,0 +1,44 @@
+
+{% extends "bootstrap/base.html" %}
+
+{% block title %} Marti F.R {% endblock %}
+
+{% block styles %}
+{{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'custom.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Lekton&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+{% endblock %}
+
+{% block navbar %}
+    <div class="container">
+		<a href="/"><img src="{{url_for('static', filename='img/cesare-ripa.gif')}}" class="logo" /></a>
+		<div class="nav">
+			<a href="{{ '/' }}" class="active">home</a>
+			|
+			<a href="{{ '/about' }}">about</a>
+			|
+			<a href="{{ '/shop' }}">shop</a>
+			|
+			<a href="{{ '/contact' }}">contact</a>
+		</div>
+	</div>
+{% endblock %}
+
+{% block content %}
+	<div class="container">
+		<h2>Depth</h2>
+		<p>Depth is an open source tool that proposes a new way of approaching design processes and diffuses the boundaries between analog and digital terrain. Depth has been designed to digitally assist manual or artisanal creation by creating a bridge between creative languages. For this to be possible, Depth is created from a hybridization of several resources and making use of the collective knowledge present in the network, with the intention that in this way artists and designers can explore new territories. The way in which designers work and develop their projects are very diverse. However, although it may seem paradoxical, the tools currently used for the execution of projects are apparently much more limited and standardized. In fact, changing from going from working through manual tools to working using digital tools has completely affected, both positively and negatively, the work of the designer.
+		</p>
+		<p>If on the one hand the mastery of the manual tools requires a fairly long learning curve, the current digital tools allow to be learned more easily, and therefore can be used for a much greater thickness of users. I also understand that the standardization of digital design tools has also led to the standardization and homogenization of the results obtained by the users.
+		</p>
+		<p>As a designer, I watch this new paradigm and identify standardized tools as the focus of a creative crisis. For this reason I consider possible alternatives to the standardized tools, and I propose experimentation with tools as a good way to innovate in the field of design. The appropriation and subversion of non-design tools, the creation of new tools that fit the needs of each project and the recovery of more traditional and analog tools, are some of the possible options that I consider as an alternative to the large packages of computer design tools.
+		</p>
+	</div>
+
+    <div class="container">
+		<footer>
+	        <p>© 2020 Copyright | Marti F.R | All Rights Reserved</p>
+	    </footer>
+    </div>
+{% endblock %}
