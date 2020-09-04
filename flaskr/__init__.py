@@ -1,9 +1,12 @@
-import os
-from flask import Flask
+from flask import Flask, Blueprint
 from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 
+from flaskr.main.views import main
+
 app = Flask(__name__)
+app.register_blueprint(main)
+
 app.secret_key = 'NXaBykem'
 Bootstrap(app)
 
@@ -28,11 +31,8 @@ class Purchase(db.Model):
     product = db.relationship(Product)
     downloads_left = db.Column(db.Integer, default=5)
 
-#Import views
-import flaskr.views
-
 #Import payment
-import flaskr.payment
+from flaskr import payment
 
 
 if __name__ == '__main__':

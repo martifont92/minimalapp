@@ -1,0 +1,58 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %} Marti F.R {% endblock %}
+
+{% block styles %}
+{{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'custom.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Lekton&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+{% endblock %}
+
+{% block navbar %}
+    <div class="container">
+		<a href="/"><img src="{{url_for('static', filename='img/cesare-ripa.gif')}}" class="logo" /></a>
+		<div class="nav">
+			<a href="{{ '/' }}">home</a>
+			|
+			<a href="{{ '/about' }}">about</a>
+			|
+			<a href="{{ '/shop' }}" class="active">shop</a>
+			|
+			<a href="{{ '/contact' }}">contact</a>
+		</div>
+	</div>
+{% endblock %}
+
+{% block content %}
+	<div class="container">
+		
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				{% for message in messages %}
+					<div class="alert alert-success center" role="alert">{{ message }}</div>
+				{% endfor %}
+			{% endif %}
+		{% endwith %}
+
+		<form action="{{ url_for('pay') }}" method="POST">
+			<script
+			    src="https://checkout.stripe.com/checkout.js"
+			    class="stripe-button"
+			    data-key="{{ pub_key }}"
+			    data-amount="997"
+			    data-name="Marti F.R"
+			    data-description="-"
+			    data-image="{{url_for('static', filename='img/about.jpeg')}}" class="aboutimg"
+			    data-locale="auto"
+			    data-currency="eur">
+			  </script>
+		</form>
+	</div>
+
+    <div class="container">
+		<footer>
+	        <p>© 2020 Copyright | Marti F.R | All Rights Reserved</p>
+	    </footer>
+    </div>
+{% endblock %}
